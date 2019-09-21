@@ -17,6 +17,11 @@
     "config.json"
   ],
 
+  "background": {
+    "scripts": ["js/background.js"],
+    "persistent": true
+  },
+
   "permissions": [
     "https://www.adidas.de/yeezy/*"
   ]
