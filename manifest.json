@@ -1,0 +1,23 @@
+{
+  "manifest_version": 2,
+
+  "name": "EZ YEEZY",
+  "version": "0.1",
+
+	"content_scripts": [
+    {
+      "matches": ["https://www.adidas.de/yeezy/*"],
+      "js": ["lib/jquery.js", "js/alerter.js"],
+      "run_at": "document_end"
+    }
+  ],
+
+  "web_accessible_resources": [
+    "audio/alert.mp3",
+    "config.json"
+  ],
+
+  "permissions": [
+    "https://www.adidas.de/yeezy/*"
+  ]
+}

@@ -1,0 +1,7 @@
+{
+    "_comment": "refresh interval in ms",
+    "refresh": 5000,
+
+    "_comment": "alert starts if this word appears on the site",
+    "keyword": "citrin"
+}
