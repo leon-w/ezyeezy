@@ -9,6 +9,9 @@ function save_options() {
         keyword,
         loop
     }, () => {
+        chrome.runtime.sendMessage({
+            type: "reload_pages"
+        });
         document.getElementById("save").innerText = "Saved!";
         setTimeout(() => {
             document.getElementById("save").innerText = "Save";

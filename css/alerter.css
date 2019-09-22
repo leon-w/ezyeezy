@@ -1,0 +1,51 @@
+.alerter {
+    position: fixed;
+    z-index: 999;
+    top: 20px;
+    right: 20px;
+
+    width: 170px;
+
+    padding: 10px;
+
+    border-radius: 10px;
+    background-color: white;
+    box-shadow: 0 0 12px #848484;
+}
+
+.alerter div {
+    margin-right: 15px;
+}
+
+.alerter div:not(:last-of-type) {
+    margin-bottom: 5px;
+}
+
+.alerter button {
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 3px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.alerter button:active {
+    color: white;
+    background-color: black;
+}
+
+.alerter a {
+    position: absolute;
+    top: 5px;
+    right: 2px;
+}
+
+.state_active::after {
+    content: "active";
+    color: green;
+}
+
+.state_disabled::after {
+    content: "disabled";
+    color: red;
+}
