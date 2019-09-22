@@ -5,11 +5,13 @@ function play_sound() {
     chrome.storage.sync.get({
         loop: false,
     }, settings => {
-        alertSound.play();
-        if (settings.loop && sound_active) {
-            setTimeout(play_sound, 5000);
-        } else {
-            sound_active = false;
+        if (sound_active) {
+            alertSound.play();
+            if (settings.loop) {
+                setTimeout(play_sound, 5000);
+            } else {
+                sound_active = false;
+            }
         }
     });
 }
@@ -22,6 +24,8 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
         chrome.runtime.openOptionsPage();
     } else if (request.type == "stop_sound") {
         sound_active = false;
+        alertSound.pause();
+        alertSound.currentTime = 0;
     } else if (request.type == "reload_pages") {
         chrome.tabs.query({
             url: "https://www.adidas.de/yeezy/*"
