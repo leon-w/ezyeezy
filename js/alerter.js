@@ -1,5 +1,6 @@
 chrome.storage.sync.get({
     refresh_delay: 30000,
+    load_time: 3000,
     keyword: "warte",
     enable: true
 }, settings => {
@@ -46,6 +47,6 @@ chrome.storage.sync.get({
                     type: "stop_sound"
                 }));
             }
-        }, 1000);
+        }, settings.load_time);
     }
 });
