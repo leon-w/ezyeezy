@@ -9,7 +9,7 @@ chrome.storage.sync.get({
     $("body").append(`
         <div class='alerter'>
             <div>Bot: <span class="${settings.enable ? "state_active" : "state_disabled"}"></span></div>
-            <div id="refresh_time">${settings.enable ? `Refreshing in ${(time_left/1000).toFixed(1)}s` : "Refreshing disabled"}</div>
+            <div id="refresh_time">${settings.enable ? `Refreshing in ${Math.round(time_left/1000)}s` : "Refreshing disabled"}</div>
             <button id="stop_sound">Stop sound</button>
             <a>⚙️</a>
         </div>
@@ -23,14 +23,14 @@ chrome.storage.sync.get({
     if (settings.enable) {
         // reload timer
         let i = setInterval(() => {
-            time_left -= 100;
-            $("#refresh_time").text(`Refreshing in ${(time_left/1000).toFixed(1)}s`)
+            time_left -= 1000;
+            $("#refresh_time").text(`Refreshing in ${Math.round(time_left/1000)}s`)
             if (time_left <= 0) {
                 $("#refresh_time").text("Refreshing...");
                 clearInterval(i);
                 location.reload(true);
             }
-        }, 100)
+        }, 1000)
 
         // let the page load, then check for keyword
         setTimeout(() => {
