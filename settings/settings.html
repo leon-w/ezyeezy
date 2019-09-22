@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>EZ YEEZY Settings</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script type="text/javascript" src="settings.js"></script>
+</head>
+<body>
+<div class="container">
+    <h1>EZ YEEZY Settings</h1>
+    <div class="attribute">
+        <label for="enable">Active:</label>
+        <input type="checkbox" name="enable" id="cb_enable">
+    </div>
+    <div id="other_settings">
+    <div class="attribute">
+        <label for="refresh_delay">Page refresh delay (ms):</label>
+        <input type="number" name="refresh_delay" min="1000" id="tb_refresh_delay">
+    </div>
+    <div class="attribute">
+        <label for="keyword">Keyword:</label>
+        <input type="text" name="keyword" id="tb_keyword">
+    </div>
+    <div class="attribute">
+        <label for="loop">Alarm loop:</label>
+        <input type="checkbox" name="loop" id="cb_loop">
+    </div>
+    </div>
+    <hr>
+    <button id="save">Save</button>
+</div>
+</body>
+</html>

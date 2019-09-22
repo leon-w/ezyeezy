@@ -12,6 +12,8 @@
     }
   ],
 
+  "options_page": "settings/settings.html",
+
   "web_accessible_resources": [
     "audio/alert.mp3",
     "config.json"
@@ -23,6 +25,7 @@
   },
 
   "permissions": [
-    "https://www.adidas.de/yeezy/*"
+    "https://www.adidas.de/yeezy/*",
+    "storage"
   ]
 }
