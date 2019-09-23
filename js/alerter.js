@@ -32,9 +32,19 @@ chrome.storage.sync.get({
             }
         }, 1000)
 
+
+        let keywords = [];
+        settings.keyword.split(",").forEach(s => {
+            s = s.trim();
+            keywords.push(s.toUpperCase());
+            keywords.push(s.toLowerCase());
+            keywords.push(s.charAt(0).toUpperCase() + s.slice(1));
+        });
+        console.log(keywords);
+
         // let the page load, then check for keyword
         setTimeout(() => {
-            if ($(`*:contains(${settings.keyword})`).length) {
+            if ($(keywords.map(s => `*:contains(${s})`).join(",")).length) {
                 clearInterval(i);
                 $("#refresh_time").text("Drop active")
                 chrome.runtime.sendMessage({
