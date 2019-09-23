@@ -40,7 +40,6 @@ chrome.storage.sync.get({
             keywords.push(s.toLowerCase());
             keywords.push(s.charAt(0).toUpperCase() + s.slice(1));
         });
-        console.log(keywords);
 
         // let the page load, then check for keyword
         setTimeout(() => {

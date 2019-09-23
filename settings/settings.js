@@ -40,4 +40,10 @@ function restore_options() {
 document.addEventListener("DOMContentLoaded", () => {
     restore_options();
     document.getElementById("save").addEventListener("click", save_options);
+    document.getElementById("test_sound").addEventListener("click", () => chrome.runtime.sendMessage({
+        type: "play_sound"
+    }));
+    document.getElementById("stop_sound").addEventListener("click", () => chrome.runtime.sendMessage({
+        type: "stop_sound"
+    }));
 });
